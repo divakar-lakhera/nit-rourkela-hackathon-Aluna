@@ -10,7 +10,7 @@ Aluna is a realtime cross-platform messaging app developed for inter-NIT/ intra-
 # Tech Stack
 #### HTML5, CSS3, JavaScript, jQuery, Bootstrap 4 , featherJS
 #### Kotlin for Android (For Aluna App For Android)
-#### Google Firebase JavaScript & Auth API (for Login/Logout and Cloud RealTime Data Storage and Retrival)
+#### Google Firebase JavaScript & Auth API (for Login/Logout and RealTime Cloud Data Storage and Retrival)
 #### Apache for webserver. 
 
 
