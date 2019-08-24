@@ -7,11 +7,11 @@
 #### Inter NIT Communication platform.
 
 # Tech Stack
-#### ..*HTML5, CSS3, JavaScript, jQuery, Bootstrap 4 , featherJS
-#### ..*Kotlin for Android (For Aluna App For Android)
-#### ..*Google Firebase JavaScript & Auth API
-#### ..*Apache for webserver. 
-#### ..*Groupie Android Library
-#### ..*Picasso Android Library
+#### ..* HTML5, CSS3, JavaScript, jQuery, Bootstrap 4 , featherJS
+#### ..* Kotlin for Android (For Aluna App For Android)
+#### ..* Google Firebase JavaScript & Auth API
+#### ..* Apache for webserver. 
+#### ..* Groupie Android Library
+#### ..* Picasso Android Library
 
 
