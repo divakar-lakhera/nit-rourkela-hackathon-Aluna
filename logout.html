@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Aluna-Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <script src="js/jq.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="login_div" class="main-div">
+    <h3>Login to Aluna</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDpdaTxjxuQB3ORRwKgf28Wke7gCQbDDDU",
+    authDomain: "alunnahackathon.firebaseapp.com",
+    databaseURL: "https://alunnahackathon.firebaseio.com",
+    projectId: "alunnahackathon",
+    storageBucket: "",
+    messagingSenderId: "739686334059",
+    appId: "1:739686334059:web:f57ca9abdd67b552"
+  };
+    firebase.initializeApp(config);
+  </script>
+  <script src="js/indexForLogout.js"></script>
+
+</body>
+</html>

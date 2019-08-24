@@ -1,0 +1,329 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Aluna - Inter NIT Messenging Service">
+    <meta name="author" content="Divakar Lakhera">
+    <title>Aluna Web</title>
+    <link href="bts-res/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom-style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+
+    <link href="css/ui-main.css" rel="stylesheet">
+  </head>
+  <body style="overflow-y:hidden;">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Aluna Web</a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="logout.html">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+        <li class="nav-item">
+        <div style="display:flex;flex-direction:row;align-items:flex-start;margin-left:10px; margin-bottom:-20px;">
+          <img src="res/man.svg" height=60 width=60 class="img-round" style="margin-left:5px;">
+          <div style="margin-left:10px;">
+          <p style="margin-left:5px;font-size: 25px;font-weight:600;margin-bottom: 0px;">Hi,</p>
+          <p id="userName" style="margin-left:5px;font-weight:600;">Error</p>
+          </div>
+        </div>
+        </li>
+        <li class="nav-item">
+          <hr>
+          </li>
+          <p class="text-muted" align="center"style="margin-bottom:0px;">Select an option from below and get started.</p>
+          <li class="nav-item" >
+          <hr>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="message-square"></span>
+              Chats <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="aluna-main-grpChat.html">
+              <span data-feather="users"></span>
+              Groups
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aluna-main-notice.html">
+              <span data-feather="bell"></span>
+              Notices
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <span data-feather="clock"></span>
+              TimeTable
+            </a>
+          </li>
+          <li class="nav-item">
+          <hr>
+          </li>
+          <li class="nav-item">
+          <p align=center class="text-muted">&copy;Aluna Web Beta<br>2018-19</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <div style="display:flex;align-items:flex-start;flex-direction:column;">
+        <h1 class="h2">Chats</h1>
+        <h1 class="h6 text-muted" style="font-weight:200;">Fast | Secure | Effective</h1>
+        </div>
+      </div>
+      <div style="margin-top:-17px; width:104%; padding-left:0px; padding-right:0px; padding-bottom:0px; margin-left:-25px;">
+          <div class="messaging">
+                <div class="inbox_msg">
+                  <div class="inbox_people">
+                    <div class="headind_srch">
+                      <div class="recent_heading">
+                        <h4>Recent</h4>
+                      </div>
+                      <div class="srch_bar">
+                        <div class="stylish-input-group">
+                          <input type="text" class="search-bar"  placeholder="Search" >
+                          <span class="input-group-addon">
+                          <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                          </span> </div>
+                      </div>
+                    </div>
+
+                    <div class="inbox_chat" id="usersToChat">
+                      <div class="chat_list active_chat">
+                        <div class="chat_people">
+                          <div class="chat_img"> <img src="res/user-profile.png" alt="Vedant"> </div>
+                          <div class="chat_ib">
+                            <h5>Vedant Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+
+  
+                      
+                    </div>
+                  </div>
+                  <div class="mesgs" >
+                    <div class="msg_history" id="msg_boxes">
+
+                      <div class="incoming_msg">
+                        <div class="incoming_msg_img"> <img src="res/user-profile.png" alt="Vedant"> </div>
+                        <div class="received_msg">
+                          <div class="received_withd_msg">
+                            <p>Hey, do you know you can contact anyone in Aluna?</p>
+                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                        </div>
+                      </div>
+                      
+                      <div class="outgoing_msg">
+                          <div class="sent_msg">
+                            <p>Really?</p>
+                            <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                        </div>
+                      <div class="incoming_msg">
+                        <div class="incoming_msg_img"> <img src="res/user-profile.png" alt="Vedant"> </div>
+                        <div class="received_msg">
+                          <div class="received_withd_msg">
+                            <p>Yes, also if you have a branch change in your college; you will be automatically added to new groups related to your new course.</p>
+                            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                        </div>
+                      </div>
+                      
+                     
+                    </div>
+                    <div class="type_msg">
+                      <div class="input_msg_write">
+                        <input type="text" class="write_msg" id="main_message" placeholder="Type a message" style="padding-left:5px;" />
+                        <button class="msg_send_btn" type="button" onclick="sendMessage();"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
+    </main>
+  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="js/jq.js"></script>
+      <script src="bts-res/js/bootstrap.min.js" rel="stylesheet"></script>
+      <script src="js/feather.js"></script>
+        <script src="js/ui-main-search.js"></script></body>
+
+<script>
+   var chatList={};
+   var userFastFetch={};
+   var userDpFastFetch={};
+   var myID;
+   var currentSelected;
+   var clk=0;
+    var config = {
+      apiKey: "AIzaSyDpdaTxjxuQB3ORRwKgf28Wke7gCQbDDDU",
+    authDomain: "alunnahackathon.firebaseapp.com",
+    databaseURL: "https://alunnahackathon.firebaseio.com",
+    projectId: "alunnahackathon",
+    storageBucket: "",
+    messagingSenderId: "739686334059",
+    appId: "1:739686334059:web:f57ca9abdd67b552"
+  };
+    firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById('userName').innerHTML=user.email;
+    myID=user.uid;
+    console.log(myID);
+  }
+    });
+    var prevUp=0;
+    function updateViewOnClick(val,sid)
+    { if(sid !=0){var ui='';
+      document.getElementById('msg_boxes').innerHTML="";
+      document.getElementById('userDiv'+val).className += ' active_chat';
+      document.getElementById('userDiv'+prevUp).className='chat_list';
+      prevUp=val;
+      currentSelected=sid;
+      var ref = firebase.database().ref('/user-messages/'+myID+'/'+sid+'/');
+      ref.once("value").then(function(dataSnapshot){
+        dataSnapshot.forEach(function getChild(childSnap){
+          var date = new Date(childSnap.val().timestamp*1000);
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          var month = months[date.getMonth()];
+          var date = date.getDate();
+        if(childSnap.val().fromId==myID)
+        {
+          
+          ui+= '  <div class="outgoing_msg">  \
+                          <div class="sent_msg">  \
+                            <p>'+childSnap.val().text+'</p>  \
+                            <span class="time_date"> '+hours+':'+minutes+' AM    |    '+date+' '+month+' </span> </div> \
+                        </div>';
+        }
+        else
+        {
+          ui+='<div class="incoming_msg">   \
+                        <div class="incoming_msg_img"> <img src="'+userDpFastFetch[sid]+'" alt="Vedant" height=43 width=50 style="border-radius:50%;"> </div>  \
+                        <div class="received_msg">   \
+                          <div class="received_withd_msg">  \
+                            <p>'+childSnap.val().text+'</p>  \
+                            <span class="time_date">'+hours+':'+minutes+' AM    |   '+date+' '+month+' </span></div>  \
+                        </div>  \
+                      </div>';
+
+        }
+
+
+        });
+        document.getElementById('msg_boxes').innerHTML=ui;
+        document.getElementById('msg_boxes').scrollTop = 100000;
+      });
+      return false;
+    }
+  }
+
+    function sendMessage()
+    {
+      var m=document.getElementById('main_message').value;
+      document.getElementById('main_message').value="";
+      var sref=firebase.database().ref('/user-messages/'+myID+'/'+currentSelected+'/');
+      var rref=firebase.database().ref('/user-messages/'+currentSelected+'/'+myID+'/');
+      var newPostRef = sref.push();
+      var postId = newPostRef.key;
+      var rnewPostRef = rref.push();
+      var rpostId = rnewPostRef.key;
+      var ssref=firebase.database().ref('/user-messages/'+myID+'/'+currentSelected+'/'+postId+'/');
+      var rrref=firebase.database().ref('/user-messages/'+currentSelected+'/'+myID+'/'+rpostId+'/');
+      var stamp=Math.round(+new Date()/1000);
+      ssref.set({
+        'fromId' : myID,
+        'id' : postId,
+        'text' : m,
+        'timestamp' : stamp,
+        'told': currentSelected,
+  });
+  rrref.set({
+    'fromId' : myID,
+        'id' : postId,
+        'text' : m,
+        'timestamp' : stamp,
+        'told': currentSelected,
+  });
+
+      
+    }
+
+    function loadUsers()
+    { document.getElementById("usersToChat").innerHTML="";
+       var v=document.getElementById("usersToChat").innerHTML;
+      var ref = firebase.database().ref("/users/");
+      ref.once("value").then(function(dataSnapshot){
+        dataSnapshot.forEach(function getChild(childSnap){
+         var c=childSnap.key;
+         if(c!=myID)
+            {
+             v+='   <a onclick="updateViewOnClick('+clk+','+ '\''+childSnap.val().uid+'\');"> <div class="chat_list" id="userDiv' +clk+ '">   \
+                        <input type="hidden" id="uid' +clk+ '" value="' +childSnap.val().uid+'" > \
+                        <input type="hidden" id="cld' +clk+ ' value="'+clk+'" "> \
+                        <div class="chat_people">    \
+                          <div class="chat_img"> <img src="'+ childSnap.val().profileImageUrl + '" alt="Vedant" height=50 width=70 style="border-radius:50%;"> </div> \
+                          <div class="chat_ib"> \
+                            <h5>'+ childSnap.val().username + '<span class="chat_date">Dec 25</span></h5> \
+                            <p>Test, which is a new approach to have all solutions \
+                              astrology under one roof.</p>\
+                          </div>\
+                        </div>\
+                      </div></a>';  
+
+                      clk++;
+              }
+              userFastFetch[c]= childSnap.val().username;
+              userDpFastFetch[c]= childSnap.val().profileImageUrl;
+        });
+        document.getElementById("usersToChat").innerHTML=v;
+      });
+      
+    }
+var prevChild=0;
+var prevInstance=0;
+    function updateMsgs()
+    {
+      if(currentSelected !=0 ){
+        console.log(prevUp);
+        if(prevInstance!=prevUp){
+        prevInstance=prevUp;
+        prevChild=0;}
+      var sref=firebase.database().ref('/user-messages/'+myID+'/'+currentSelected+'/');
+      sref.once("value").then(function(dataSnapshot)
+        {   
+          var num=dataSnapshot.numChildren();
+          if(num>prevChild)
+          {
+            prevChild=num;
+            updateViewOnClick(prevUp,currentSelected);
+          }
+        });
+    }
+  }
+  
+    loadUsers();
+    setInterval(updateMsgs,500);
+</script>
+</html>

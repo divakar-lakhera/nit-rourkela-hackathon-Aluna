@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Aluna - Inter NIT Messenging Service">
+    <meta name="author" content="Divakar Lakhera">
+    <title>Aluna Web</title>
+    <link href="bts-res/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom-style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+
+    <link href="css/ui-main.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Aluna Web</a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="logout.html">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+        <li class="nav-item">
+        <div style="display:flex;flex-direction:row;align-items:flex-start;margin-left:10px; margin-bottom:-20px;">
+          <img src="res/man.svg" height=60 width=60 class="img-round" style="margin-left:5px;">
+          <div style="margin-left:10px;">
+          <p style="margin-left:5px;font-size: 25px;font-weight:600;margin-bottom: 0px;">Hi,</p>
+          <p id="userName" style="margin-left:5px;font-weight:600;">Error</p>
+          </div>
+        </div>
+        </li>
+        <li class="nav-item">
+          <hr>
+          </li>
+          <p class="text-muted" align="center"style="margin-bottom:0px;">Select an option from below and get started.</p>
+          <li class="nav-item" >
+          <hr>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="aluna-main.html">
+              <span data-feather="message-square"></span>
+              Chats <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="aluna-main-grpChat.html">
+              <span data-feather="users"></span>
+              Groups
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active" href="#">
+              <span data-feather="bell"></span>
+              Notices
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <span data-feather="clock"></span>
+              TimeTable
+            </a>
+          </li>
+          <li class="nav-item">
+          <hr>
+          </li>
+          <li class="nav-item">
+          <p align=center class="text-muted">&copy;Aluna Web Beta<br>2018-19</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div style="display:flex;align-items:flex-start;flex-direction:column;">
+        <h1 class="h2">Notices</h1>
+        <h1 class="h6 text-muted" style="font-weight:200;">Be Updated with Latest Updates in College.</h1>
+        </div>
+      </div>
+      <div>
+        
+        <h1 class="h2" style="font-weight:100">Create A Notice</h1>
+        <h1 class="h6 text-muted" style="font-weight:200;">Lost Something? Let your buddies know</h1>
+        <textarea id="txta" class="form-control input-lg" width=100% placeholder="Enter Notice" required autofocus style="margin-top:20px;"></textarea>
+        <input type="button" onclick="postNotice();" class="form-control btn-primary" style="width:200px; margin-top:20px;" value="Post Notice">
+        <hr>
+      </div>
+      <div>
+          <h1 class="h2" style="font-weight:100">Latest Notices</h1>
+          <div id="notice_container">
+             
+          </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="js/jquerry.js"></script>
+      <script src="bts-res/js/bootstrap.min.js" rel="stylesheet"></script>
+      <script src="js/feather.js"></script>
+     
+        <script src="js/ui-main-search.js"></script></body>
+
+<script>
+    var myId;
+    var config = {
+      apiKey: "AIzaSyDpdaTxjxuQB3ORRwKgf28Wke7gCQbDDDU",
+    authDomain: "alunnahackathon.firebaseapp.com",
+    databaseURL: "https://alunnahackathon.firebaseio.com",
+    projectId: "alunnahackathon",
+    storageBucket: "",
+    messagingSenderId: "739686334059",
+    appId: "1:739686334059:web:f57ca9abdd67b552"
+  };
+    firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById('userName').innerHTML=user.email;
+    myId=user.uid;
+  }
+    });
+   var userFastFetch={};
+   var userDpFastFetch={};
+    function loadUsers()
+    {
+      var ref = firebase.database().ref("/users/");
+      ref.once("value").then(function(dataSnapshot){
+        dataSnapshot.forEach(function getChild(childSnap){
+              userFastFetch[childSnap.val().uid]= childSnap.val().username;
+              userDpFastFetch[childSnap.val().uid]= childSnap.val().profileImageUrl;
+        });
+      });
+      
+    }
+
+   function postNotice()
+   {
+     var m=document.getElementById('txta').value;
+     var ref=firebase.database().ref('/notices/');
+     var stamp=Math.round(+new Date()/1000);
+     var newPostRef = ref.push();
+     var postId = newPostRef.key;
+     var reff=firebase.database().ref('/notices/'+postId+'/');
+     reff.set({
+      'timestamp' : stamp,
+      'notice' : m,
+      'noticeBy': myId
+     });
+   }
+
+   function loadNotices()
+    { document.getElementById("notice_container").innerHTML="";
+       var v=document.getElementById("notice_container").innerHTML;
+      var ref = firebase.database().ref("/notices/");
+      ref.once("value").then(function(dataSnapshot){
+        dataSnapshot.forEach(function getChild(childSnap){
+          var date = new Date(childSnap.val().timestamp*1000);
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          var month = months[date.getMonth()];
+          var date = date.getDate();
+             v+='  <div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>  \
+                 '+childSnap.val().notice +'</strong><p class="text-muted" style="margin-top:30px;margin-bottom:10px;">'+hours+':'+minutes+' | '+date+' '+month+'</p>  \
+                 <p class="text-muted" style="margin-top:10px;">~'+userFastFetch[childSnap.val().noticeBy]+'</p><button type="button" class="close" data-dismiss="alert" aria-label="Close">  \
+                    <span aria-hidden="true">&times;</span>  \
+                  </button> \
+                </div> ';
+        
+        });
+        document.getElementById("notice_container").innerHTML=v;
+      });
+      
+    }
+    loadUsers();
+    loadNotices();
+    var prevNo=0;
+    function updateList()
+    {
+      var ref = firebase.database().ref("/notices/");
+      ref.once("value").then(function(dataSnapshot){
+      var n=dataSnapshot.numChildren();
+      if(n>prevNo)
+      { 
+        prevNo=n;
+        loadNotices();
+      }
+    });
+  }
+    setInterval(updateList,500);
+</script>
+</html>
