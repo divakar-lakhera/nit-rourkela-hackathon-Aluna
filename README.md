@@ -1,4 +1,5 @@
 # Aluna
+###### (Some Features Are TODO !)
 ##### Aluna for Android: https://github.com/vedutheboss/Alluna_NITHACK
 ###### (Aluna For Android has also been made within 24hrs for NIT-RKL Hackathon)
 #### Aluna is a realtime cross-platform messaging app for inter-NIT/ intra-NIT communication build with extra features which are required by a college student in day to day life.
